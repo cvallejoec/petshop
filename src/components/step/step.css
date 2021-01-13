@@ -1,0 +1,32 @@
+.step {
+  /* background-color: rgba(123, 156, 212, 0.1); */
+  margin: 20px;
+  width: 300px;
+  border-radius: 13px;
+  padding: 20px;
+  /* -webkit-box-shadow: -1px 3px 15px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 15px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 15px -5px rgba(0, 0, 0, 0.75); */
+}
+
+.step h3 {
+}
+
+.step img {
+  width: 20%;
+  padding: 20px;
+  border-radius: 24px;
+  -webkit-box-shadow: -1px 3px 15px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 3px 15px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 3px 15px -5px rgba(0, 0, 0, 0.75);
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+.step img:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.icon:hover {
+  fill: white;
+}
