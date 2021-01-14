@@ -46,9 +46,9 @@ const Customer = () => {
           />
         </div>
       </section>
-      {/* <section>
+      <section className="customer__form">
         <CustomerForm />
-      </section> */}
+      </section>
     </div>
   );
 };
