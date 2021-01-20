@@ -1,4 +1,11 @@
 .customer {
+  padding-bottom: 300px;
+  background-image: url('../../static/svg/background_form.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* margin-bottom: 300px; */
+  background-position-y: 400px;
+  background-position-x: -800px;
 }
 
 .hero {
@@ -58,14 +65,18 @@
   flex-wrap: wrap;
 }
 
-.customer__form {
+.customer__tabs {
   display: flex;
   justify-content: center;
+}
+
+/* .customer__footer {
   background-image: url('../../static/svg/background_form.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-position: 130px 0 0 0; */
-}
+  height: 1000px;
+  /* background-position: 130px 0 0 0; 
+} */
 
 @media screen and (min-width: 480px) {
 }
@@ -92,7 +103,7 @@
   .workflow h2 {
     margin: 0px 100px;
   }
-  .customer__form {
+  .customer__tabs {
     background-position-y: -300px;
   }
 }

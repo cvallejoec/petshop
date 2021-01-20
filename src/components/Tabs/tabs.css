@@ -1,0 +1,44 @@
+.tabs {
+}
+
+.tabs__container {
+  display: flex;
+  justify-content: center;
+}
+
+.tabs__title {
+  margin: 10px 30px;
+  font-size: 24px;
+  color: rgb(110, 110, 110);
+  font-family: 'Inter', 'sans-serif';
+  font-weight: 400;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.1s ease-in;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+}
+
+.tabs__title:hover {
+  color: rgb(110, 110, 110);
+}
+
+.tabs__title--active {
+  color: #ad85a2;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.1s ease-in;
+}
+
+.tabs__title--active::before {
+  position: absolute;
+  top: 110%;
+  left: 40%;
+  content: '';
+  width: 7px;
+  height: 7px;
+  background-color: #ad85a2;
+  border-radius: 50%;
+}

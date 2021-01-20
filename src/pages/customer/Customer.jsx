@@ -7,7 +7,7 @@ import Step1 from '../../static/svg/1-step.svg';
 import Step2 from '../../static/svg/2-step.svg';
 import Step3 from '../../static/svg/3-step.svg';
 import Step4 from '../../static/svg/4-step.svg';
-import CustomerForm from '../../components/CustomerForm/CustomerForm';
+import Tabs from '../../components/Tabs/Tabs';
 
 const Customer = () => {
   return (
@@ -46,9 +46,10 @@ const Customer = () => {
           />
         </div>
       </section>
-      <section className="customer__form">
-        <CustomerForm />
+      <section className="customer__tabs">
+        <Tabs />
       </section>
+      <section className="customer__footer"></section>
     </div>
   );
 };

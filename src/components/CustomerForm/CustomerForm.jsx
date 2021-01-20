@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './customerForm.css';
 
+import Button from '../Button/Button.jsx';
+
 const CustomerForm = () => {
   const [state, setState] = useState({
     name: '',
@@ -103,6 +105,9 @@ const CustomerForm = () => {
             className="label__input"
           />
         </div>
+      </div>
+      <div className="form__footer">
+        <Button text="Solicitar" />
       </div>
     </div>
   );
