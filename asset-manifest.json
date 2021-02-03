@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/petshop/static/css/main.452e263a.chunk.css",
-    "main.js": "/petshop/static/js/main.a473219a.chunk.js",
-    "main.js.map": "/petshop/static/js/main.a473219a.chunk.js.map",
+    "main.js": "/petshop/static/js/main.8807792c.chunk.js",
+    "main.js.map": "/petshop/static/js/main.8807792c.chunk.js.map",
     "runtime-main.js": "/petshop/static/js/runtime-main.10a450fe.js",
     "runtime-main.js.map": "/petshop/static/js/runtime-main.10a450fe.js.map",
-    "static/js/2.6cbb7262.chunk.js": "/petshop/static/js/2.6cbb7262.chunk.js",
-    "static/js/2.6cbb7262.chunk.js.map": "/petshop/static/js/2.6cbb7262.chunk.js.map",
+    "static/js/2.3d8d7d93.chunk.js": "/petshop/static/js/2.3d8d7d93.chunk.js",
+    "static/js/2.3d8d7d93.chunk.js.map": "/petshop/static/js/2.3d8d7d93.chunk.js.map",
     "index.html": "/petshop/index.html",
     "static/css/main.452e263a.chunk.css.map": "/petshop/static/css/main.452e263a.chunk.css.map",
-    "static/js/2.6cbb7262.chunk.js.LICENSE.txt": "/petshop/static/js/2.6cbb7262.chunk.js.LICENSE.txt",
+    "static/js/2.3d8d7d93.chunk.js.LICENSE.txt": "/petshop/static/js/2.3d8d7d93.chunk.js.LICENSE.txt",
     "static/media/1-step.5d4985dc.svg": "/petshop/static/media/1-step.5d4985dc.svg",
     "static/media/2-step.21682d10.svg": "/petshop/static/media/2-step.21682d10.svg",
     "static/media/3-step.ab6998bf.svg": "/petshop/static/media/3-step.ab6998bf.svg",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.10a450fe.js",
-    "static/js/2.6cbb7262.chunk.js",
+    "static/js/2.3d8d7d93.chunk.js",
     "static/css/main.452e263a.chunk.css",
-    "static/js/main.a473219a.chunk.js"
+    "static/js/main.8807792c.chunk.js"
   ]
 }
