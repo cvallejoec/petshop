@@ -1,24 +1,49 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import swal from 'sweetalert2';
 import './customerForm.css';
 
+import Global from '../../Global';
 import Button from '../Button/Button.jsx';
 
 const CustomerForm = () => {
   const [state, setState] = useState({
     name: '',
+    clientDocument: '',
     species: '',
     petName: '',
     genre: '',
     serviceType: '',
-    location: '',
+    location: {
+      latitude: 111,
+      longitude: 222,
+      text: '',
+    },
+    location2: '',
   });
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setState({
       ...state,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const requestService = () => {
+    axios
+      .post(Global.url + '/api/services', state)
+      .then((res) => {
+        const serviceId = res.data.data.serviceId;
+        swal.fire({
+          title: 'Servicio solicitado',
+          text: `Este es tu número de servicio ${serviceId}`,
+          icon: 'success',
+          showCloseButton: true,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -34,6 +59,19 @@ const CustomerForm = () => {
             name="name"
             id="name"
             value={state.name}
+            onChange={(e) => handleChange(e)}
+            className="label__input"
+          />
+        </div>
+        <div className="label__container">
+          <label htmlFor="clientDocument" className="label__title">
+            Cédula
+          </label>
+          <input
+            type="text"
+            name="clientDocument"
+            id="clientDocument"
+            value={state.clientDocument}
             onChange={(e) => handleChange(e)}
             className="label__input"
           />
@@ -68,14 +106,25 @@ const CustomerForm = () => {
           <label htmlFor="genre" className="label__title">
             Sexo
           </label>
-          <input
+          {/* <input
             type="text"
             name="genre"
             id="genre"
             value={state.genre}
             onChange={(e) => handleChange(e)}
             className="label__input"
-          />
+          /> */}
+          <select
+            value={state.genre}
+            name="genre"
+            onChange={(e) => handleChange(e)}
+            className="label__input"
+            id="genre"
+          >
+            <option value="">--SELECCIONAR--</option>
+            <option value="Macho">Macho</option>
+            <option value="Hembra">Hembra</option>
+          </select>
         </div>
         <div className="label__container">
           <label htmlFor="serviceType" className="label__title">
@@ -93,21 +142,21 @@ const CustomerForm = () => {
           </select>
         </div>
         <div className="label__container">
-          <label htmlFor="location" className="label__title">
+          <label htmlFor="location2" className="label__title">
             Dirección de recogida
           </label>
           <input
             type="text"
-            name="location"
-            id="location"
-            value={state.location}
+            name="location2"
+            id="location2"
+            value={state.location2}
             onChange={(e) => handleChange(e)}
             className="label__input"
           />
         </div>
       </div>
       <div className="form__footer">
-        <Button text="Solicitar" />
+        <Button text="Solicitar" onClick={requestService} />
       </div>
     </div>
   );

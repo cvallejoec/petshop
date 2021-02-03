@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import swal from 'sweetalert2';
 import './verifyService.css';
 
+import Global from '../../Global';
 import Button from '../Button/Button';
 
 const VerifyService = () => {
@@ -9,11 +12,35 @@ const VerifyService = () => {
   });
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     setState({
       ...state,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const getVerification = () => {
+    axios
+      .get(`${Global.url}/api/services/${state.slug}`)
+      .then((res) => {
+        const service = res.data.data;
+        swal.fire({
+          title: 'Este es el estado de tu servicio',
+          html: ` <div>
+              <div>
+              
+              <label>Nombre mascota: ${service.petName}</label>
+              </div>
+              <div>
+
+              <label>Status: ${service.status}</label>
+              </div>
+            </div>`,
+          icon: 'success',
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -22,7 +49,7 @@ const VerifyService = () => {
       <div>
         <div className="label__container">
           <label htmlFor="name" className="label__title">
-            Código de verificación:
+            Ingresa tu código:
           </label>
           <input
             type="number"
@@ -35,7 +62,7 @@ const VerifyService = () => {
         </div>
       </div>
       <div className="form__footer">
-        <Button text="Verificar" />
+        <Button text="Verificar" onClick={getVerification} />
       </div>
     </div>
   );
