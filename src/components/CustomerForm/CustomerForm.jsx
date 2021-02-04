@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert2';
+import useGeolocation from 'react-hook-geolocation';
 import './customerForm.css';
 
 import Global from '../../Global';
 import Button from '../Button/Button.jsx';
 
 const CustomerForm = () => {
+  const geolocation = useGeolocation();
   const [state, setState] = useState({
     name: '',
     clientDocument: '',
@@ -15,11 +17,9 @@ const CustomerForm = () => {
     genre: '',
     serviceType: '',
     location: {
-      latitude: 111,
-      longitude: 222,
-      text: '',
+      latitude: geolocation.latitude,
+      longitude: geolocation.longitude,
     },
-    location2: '',
   });
 
   const handleChange = (e) => {
@@ -106,14 +106,6 @@ const CustomerForm = () => {
           <label htmlFor="genre" className="label__title">
             Sexo
           </label>
-          {/* <input
-            type="text"
-            name="genre"
-            id="genre"
-            value={state.genre}
-            onChange={(e) => handleChange(e)}
-            className="label__input"
-          /> */}
           <select
             value={state.genre}
             name="genre"
