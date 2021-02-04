@@ -17,8 +17,8 @@ const CustomerForm = () => {
     genre: '',
     serviceType: '',
     location: {
-      latitude: geolocation.latitude,
-      longitude: geolocation.longitude,
+      latitude: '953.1',
+      longitude: '123.3',
     },
   });
 
